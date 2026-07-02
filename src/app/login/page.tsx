@@ -19,14 +19,17 @@ export default function Login() {
   const [loading, setLoading] = React.useState(false);
 
   
+useEffect(() => {
+  if (typeof window === "undefined") return;
 
-   useEffect(() => {
-    const msg = searchParams.get("message");
+  const msg = new URLSearchParams(window.location.search).get("message");
 
-    if (msg === "login-required") {
+  if (msg === "login-required") {
+    setTimeout(() => {
       toast.error("Please login first!");
-    }
-  }, [searchParams]);
+    }, 0);
+  }
+}, []);
 
 
 
