@@ -17,6 +17,7 @@ export default function Login() {
   });
 
   const [loading, setLoading] = React.useState(false);
+
   
 
   useEffect(() => {
@@ -50,18 +51,31 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-slate-950 to-slate-900 px-4">
-      <div className="w-full max-w-lg bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-10">
+      <div className="w-full max-w-lg bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-8">
         
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white">
-            Welcome Back
-          </h1>
+         <div className="text-center mb-5">
 
-          <p className="text-slate-400 mt-3">
-            Login to continue to CodeVault
-          </p>
-        </div>
+  {/* Brand */}
+  <div className="flex flex-col items-center justify-center mb-2">
+  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-indigo-700 flex items-center justify-center">
+    <span className="text-2xl">🔐</span>
+  </div>
+
+  <h1 className="mt-3 text-2xl font-bold text-white">
+    Auth<span className="text-indigo-500">Flow</span>
+  </h1>
+</div>
+
+  {/* Heading */}
+  <h2 className="text-3xl font-bold text-white mt-1">
+    Create Account
+  </h2>
+
+  <p className="text-slate-400 mt-1">
+    Login to continue to AuthFlow.
+  </p>
+
+</div>
 
         {/* Form */}
         <form onSubmit={onLogin} className="space-y-5">
@@ -101,7 +115,7 @@ export default function Login() {
 
           <div className="flex justify-end">
             <Link
-              href="/forgot-password"
+              href="/sendemailforgotpassword"
               className="text-sm text-indigo-400 hover:text-indigo-300"
             >
               Forgot Password?
