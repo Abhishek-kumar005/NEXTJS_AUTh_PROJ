@@ -5,11 +5,9 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useSearchParams } from "next/navigation";
 
 export default function Login() {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   const [user, setUser] = React.useState({
     email: "",
@@ -17,14 +15,6 @@ export default function Login() {
   });
 
   const [loading, setLoading] = React.useState(false);
-  
-  useEffect(() => {
-    const msg = searchParams.get("message");
-
-    if (msg === "login-required") {
-      toast.error("Please login first!");
-    }
-  }, [searchParams]);
 
   const onLogin = async (e: React.FormEvent) => {
     e.preventDefault();
