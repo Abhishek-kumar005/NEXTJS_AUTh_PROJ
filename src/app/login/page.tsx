@@ -20,11 +20,14 @@ export default function Login() {
 
   
 
-  useEffect(() => {
-  if (searchParams.get("message") === "login-required") {
-    toast.error("Please login first!");
-  }
-}, [searchParams]);
+   useEffect(() => {
+    const msg = searchParams.get("message");
+
+    if (msg === "login-required") {
+      toast.error("Please login first!");
+    }
+  }, [searchParams]);
+
 
 
   const onLogin = async (e: React.FormEvent) => {
